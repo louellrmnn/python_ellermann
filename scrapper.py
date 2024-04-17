@@ -9,4 +9,4 @@ soup = BeautifulSoup(response.text, 'html.parser')
 country_tags = soup.find_all('h3', class_='country-name')
 
 for country in country_tags:
-    print (country.name)
+    print (country.text)
