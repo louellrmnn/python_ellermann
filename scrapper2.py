@@ -9,8 +9,5 @@ soup = BeautifulSoup(response.text, 'html.parser')
 country_tags = soup.find_all('h3', class_='country-name')
 country_infos = soup.find_all('span', class_='country-capital')
  
-for country in country_tags:
-    print (country.text)
-    
-for countryInfo in country_infos:
-    print (countryInfo.text)
+for country, capital in zip(country_tags, country_infos):
+    print(country.text, '-', capital.text)
